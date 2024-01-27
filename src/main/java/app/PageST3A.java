@@ -66,7 +66,44 @@ public class PageST3A implements Handler {
 
         // Add HTML for the page content
         html = html + """
-            <p>Subtask 3.A page content</p>
+            <form action = '/page2.html' method = 'post'>
+
+            <div>
+
+                <label for = 'World or Country Selector' class = 'padding-style-1'> Selected world or countries: </label>
+
+                <select id = 'World or Country Selector' name = 'World or country Selector' class = 'style-2' style = 'padding-right: 200px;
+                margin-bottom: 20px'>
+
+                    <option> World </option>
+
+                    <option> Country </option>
+
+                    <option> State </option>
+                </select>
+            </div>
+
+            <br></br>
+            Start: <select name="yearpicker" id="yearpicker"></select>
+            <br/>
+            End: <select name="yearpicker2" id="yearpicker2"></select>
+            
+            <script type="text/javascript"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+            </script>
+            <script type="text/javascript">
+            let startYear = 2008;
+            let endYear = 2021;
+            for (i = endYear; i > startYear; i--)
+            {
+                $('#yearpicker, #yearpicker2').append($('<option />').val(i).html(i));
+            }
+            
+            $('select').on('change', function(){
+              let arr = Array.from({length:$('#yearpicker2').val() - +$('#yearpicker').val()},(v,k)=>k + +$('#yearpicker').val())
+              console.log(arr);
+            })
+            </script>
             """;
 
         // Close Content div
