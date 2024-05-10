@@ -56,7 +56,7 @@ public class PageST2A implements Handler {
 
         // Add header content block
         html = html + """
-            <div class='how are youfds fasdf sad sdfsd fadsf s'>
+            <div class='head'>
                 <h1>Subtask 2.A</h1>
             </div>
         """;
